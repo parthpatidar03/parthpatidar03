@@ -1,5 +1,5 @@
 # 💫 About Me:
-🔭 I’m currently working on Next-Gen AI Solutions and vibe coding projects.<br><br>👯 I’m looking to collaborate on Innovative AI and web projects driven by a vibe coding philosophy.<br><br>🤝 I’m looking for help with Scaling agentic workflows and vector database optimization.<br><br>🌱 I’m currently learning Advanced RAG architectures and multi-agent orchestration.<br><br>💬 Ask me about React, Node.js, or how to build apps via vibe coding.<br><br>⚡ Fun fact My newest hobby is vibe coding—I love building things at the speed of thought.
+🔭 I’m currently working on Next-Gen AI Solutions and vibe coding projects.<br><br>👯 I’m looking to collaborate on Innovative AI and web projects.<br><br>🤝 I’m looking for help with Scaling agentic workflows and vector database optimization.<br><br>🌱 I’m currently learning Advanced RAG architectures and multi-agent orchestration.<br><br>💬 Ask me about React, Node.js, or how to build apps.<br><br>⚡ Fun fact My newest hobby is vibe coding—I love building things at the speed of thought.
 
 
 ## 🌐 Socials:
