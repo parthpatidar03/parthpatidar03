@@ -1,5 +1,5 @@
 # About Me:
-➡️ I’m currently having skills in building MERN based Applications.<br><br>➡️ I’m looking to collaborate on Innovative AI Applications and web projects.<br><br>➡️ I am learning AI Engineer => Integrating Chat Models in Websites and Building Agents and Automations.<br><br>➡️ I’m currently learning Advanced RAG architectures and multi-agent orchestration.<br><br>➡️ Ask me about React, Node.js, or how to build apps.
+➡️ I’m currently having skills in building MERN based Applications.<br><br>➡️ I’m looking to collaborate on Innovative AI Applications and web projects.<br><br>➡️ I am exploring AI Engineering => Integrating Chat Models in Websites and Building Agents and Automations.<br><br>➡️ I’m currently learning Advanced RAG architectures and multi-agent orchestration.<br><br>➡️ Ask me about React, Node.js, or how to build apps.
 
 
 ## 🌐 Socials:
