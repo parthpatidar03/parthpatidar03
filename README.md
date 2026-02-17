@@ -1,6 +1,7 @@
-# About Me:
-➡️ I’m currently having skills in building MERN based Applications.<br><br>➡️ I’m looking to collaborate on Innovative AI Applications and web projects.<br><br>➡️ I am exploring AI Engineering => Integrating Chat Models in Websites and Building Agents and Automations.<br><br>➡️ I’m currently learning Advanced RAG architectures and multi-agent orchestration.<br><br>
-
+# Hey, I'm Parth
+Software student who builds fullstack web apps with the MERN stack. I've spent enough time with React, Node, Express, and MongoDB.
+Right now I'm deep into AI engineering — not just calling APIs, but actually understanding how to integrate chat models into products, build agents, set up automations, and work with RAG architectures. I find the multi-agent orchestration space especially interesting because that's where the hard problems are.
+I like building tools that solve problems people actually have. If it's just a wrapper around an API, it's not interesting enough.
 
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/https://www.linkedin.com/in/patidar-parth/) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:parthpatidar202@gmail.com) 
