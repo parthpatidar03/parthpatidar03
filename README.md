@@ -1,7 +1,10 @@
 # Hey, I'm Parth Patidar
 -> Software student who has build multiple applications using MERN stack Framework.
+
 -> Right now I'm deep into AI engineering — not just calling APIs, but actually understanding how to integrate chat models into products, build agents, set up automations, and work with RAG architectures. 
+
 -> I find the multi-agent orchestration space especially interesting because that's where the hard problems are.
+
 -> I like building tools that solve problems people actually have.
 
 ## 🌐 Socials:
