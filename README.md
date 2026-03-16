@@ -1,11 +1,7 @@
 # Hey, I'm Parth Patidar
--> Software student who has build multiple applications using MERN stack Framework.
-
--> Right now I'm deep into AI engineering — not just calling APIs, but actually understanding how to integrate chat models into products, build agents, set up automations, and work with RAG architectures. 
-
--> I find the multi-agent orchestration space especially interesting because that's where the hard problems are.
-
--> I like building tools that solve problems people actually have.
+I build full-stack systems and integrate AI where it genuinely solves problems — not just as a wrapper around an API.
+Currently deep in AI engineering: RAG pipelines, LLM-powered workflows, multi-agent orchestration, and vector search. My background is MERN stack; I'm increasingly working in Python + FastAPI for ML inference systems aswell.
+I like building products that people actually use.
 
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/https://www.linkedin.com/in/patidar-parth/) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:parthpatidar202@gmail.com) 
