@@ -1,8 +1,7 @@
 # Hey, I'm Parth Patidar
 I build full-stack systems and integrate AI where it genuinely solves problems — not just as a wrapper around an API.
 Currently deep in AI engineering: RAG pipelines, LLM-powered workflows, multi-agent orchestration, and vector search. My background is MERN stack;
-
-I like building products that people actually use.
+I Enjoy building products that people actually use. 
 
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/https://www.linkedin.com/in/patidar-parth/) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:parthpatidar202@gmail.com) 
