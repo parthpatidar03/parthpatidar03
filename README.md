@@ -1,6 +1,14 @@
 # Hey, I'm Parth Patidar
-I build full-stack Web Applications and Backend systems with AI integration where it genuinely solves problems — not just as a wrapper around an API.
-Currently deep in AI engineering, System Design, Production Scalability, RAG pipelines, LLM-powered workflows, multi-agent orchestration, and more. My expertise is in MERN stack and GenAI;
+2nd year at NIT Trichy. I built QuestXP — a platform that converts YouTube 
+playlists into full AI-powered courses with RAG-based doubt solving, streaks 
+and XP systems — not for a hackathon submission, just because I wanted it to exist.
+
+I genuinely get excited about how things work under the hood. RAG pipelines, 
+vector search, backend architecture, LLM workflows — I go down these rabbit 
+holes at 2am not because I have to but because I actually want to. 
+
+Right now I'm deep into AI engineering and system design, obsessed with building 
+things that real people actually use and that actually hold up when they do.
 I Enjoy building products that people actually use.
 
 ## 🌐 Socials:
