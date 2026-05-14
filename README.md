@@ -1,6 +1,6 @@
 # Hey, I'm Parth Patidar
-I build full-stack systems and integrate AI where it genuinely solves problems — not just as a wrapper around an API.
-Currently deep in AI engineering: RAG pipelines, LLM-powered workflows, multi-agent orchestration, and vector search. My background is MERN stack;
+I build full-stack Web Applications and Backend systems with AI integration where it genuinely solves problems — not just as a wrapper around an API.
+Currently deep in AI engineering, System Design, Production Scalability, RAG pipelines, LLM-powered workflows, multi-agent orchestration, and more. My expertise is in MERN stack and GenAI;
 I Enjoy building products that people actually use.
 
 ## 🌐 Socials:
