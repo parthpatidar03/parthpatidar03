@@ -1,5 +1,5 @@
 # Hey, I'm Parth Patidar
-2nd year at NIT Trichy. I built [QuestXP](https://questxp.in) — a platform that converts YouTube 
+Pre Final year at NIT Trichy. I built [QuestXP](https://questxp.in) — a platform that converts YouTube 
 playlists into full AI-powered courses with RAG-based doubt solving, streaks 
 and XP systems — not for a hackathon submission, just because I wanted it to exist.
 
