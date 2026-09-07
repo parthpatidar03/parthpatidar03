@@ -1,0 +1,148 @@
+name: Update profile cards
+
+# Regenerates every SVG card embedded in README.md and commits the results only
+# when they actually changed, so the README keeps rendering even if the upstream
+# public instances go offline.
+#
+# Maintenance notes:
+#   * There is deliberately no `push` trigger. Together with the fact that GitHub
+#     never triggers workflows for commits pushed with GITHUB_TOKEN, that makes it
+#     impossible for this workflow to retrigger itself.
+#   * Every third-party action below is pinned to an immutable commit SHA; the
+#     trailing comment records the tag it belongs to, so bump both together.
+#     Pinning is not transitive: the streak and trophy composites resolve their
+#     own nested actions by floating tag (setup-php@v2, setup-deno@v1).
+#   * profile/activity.svg is NOT the old github-readme-activity-graph card.
+#     That project has no action and no static-generation path (see
+#     https://github.com/Ashutosh00710/github-readme-activity-graph), so this
+#     renders the real contribution grid with Platane/snk instead. Swapping to a
+#     classic heatmap would mean lowlighter/metrics, which requires a PAT.
+#   * Every card here is generated from source, so no *card* is fetched from a
+#     third-party server when someone views the README. The 19 shields.io tech
+#     badges still are — check shields.io first if badges break, not this file.
+#   * Scheduled workflows in public repos are disabled after 60 days without
+#     repository activity. The daily card commit normally resets that clock, but
+#     this workflow deliberately skips committing when nothing changed, so a very
+#     long unchanged stretch could let the cron lapse (GitHub emails first).
+
+on:
+  schedule:
+    # Daily at 04:17 UTC. Off-the-hour to avoid the scheduler's peak-minute queue.
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: update-profile-cards
+  cancel-in-progress: false
+
+jobs:
+  cards:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write # commit the regenerated SVGs back to the default branch
+    env:
+      # Optional; GITHUB_TOKEN is the intended default and every card works on it.
+      # A repo-scoped PAT changes exactly one number: the trophy card's
+      # Repositories count (46 public via GITHUB_TOKEN vs 58 including private).
+      # It does NOT affect the stats or top-langs cards — the pinned renderer
+      # (core 2.1.3) implements no private-contribution option at all.
+      # Weigh that against the cost: this token is handed to all five third-party
+      # actions, two of which resolve their own nested actions by floating tag
+      # (setup-php@v2, setup-deno@v1), so a PAT would reach code that is not
+      # fully SHA-pinned. GITHUB_TOKEN does not carry that risk.
+      CARD_TOKEN: ${{ secrets.PROFILE_STATS_TOKEN || github.token }}
+
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      # Each generator is allowed to fail on its own so that one upstream outage
+      # cannot block the other four cards. The final step turns any failure into
+      # a red run.
+      - name: Generate stats card
+        id: stats
+        continue-on-error: true
+        uses: stats-organization/github-readme-stats-action@e856fc8de9d7729b463c468911e232cfbdc3d55e # v2.0.2
+        with:
+          card: stats
+          options: username=${{ github.repository_owner }}&theme=dark&hide_border=false&include_all_commits=true
+          path: profile/stats.svg
+          token: ${{ env.CARD_TOKEN }}
+          # Empty = use the renderer version pinned in this action's own lockfile
+          # instead of resolving the "v2" npm dist-tag at run time.
+          core_version: ""
+          # The renderer returns a "Something went wrong" card instead of throwing
+          # on API errors; this makes such a card fail the step rather than be committed.
+          fail_on_error: "true"
+
+      - name: Generate top languages card
+        id: langs
+        continue-on-error: true
+        uses: stats-organization/github-readme-stats-action@e856fc8de9d7729b463c468911e232cfbdc3d55e # v2.0.2
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&theme=dark&hide_border=false&layout=compact
+          path: profile/top-langs.svg
+          token: ${{ env.CARD_TOKEN }}
+          core_version: ""
+          fail_on_error: "true"
+
+      - name: Generate streak card
+        id: streak
+        continue-on-error: true
+        uses: DenverCoder1/github-readme-streak-stats@51cfb8879073b4c016ce6286016de0b14d179077 # v1.7.0
+        with:
+          options: user=${{ github.repository_owner }}&theme=dark&hide_border=false
+          path: profile/streak.svg
+          token: ${{ env.CARD_TOKEN }}
+
+      - name: Generate trophies card
+        id: trophies
+        continue-on-error: true
+        # Pinned to a master commit: the theme input landed after the v1.0 tag.
+        uses: ryo-ma/github-profile-trophy@e3c89df995e92e67cdd4b2acaab9d974583dc1f7
+        with:
+          username: ${{ github.repository_owner }}
+          output_path: profile/trophies.svg
+          token: ${{ env.CARD_TOKEN }}
+          # "dark" is not a real trophy theme and silently falls back to the white
+          # default; darkhub is the GitHub-dark palette.
+          theme: darkhub
+
+      - name: Generate contribution activity card
+        id: activity
+        continue-on-error: true
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3.5.0
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ env.CARD_TOKEN }}
+          outputs: profile/activity.svg?palette=github-dark
+
+      - name: Commit changed cards
+        if: ${{ !cancelled() }}
+        run: |
+          git add -A profile
+          if git diff --cached --quiet; then
+            echo "Cards unchanged; nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(profile): refresh generated cards"
+          git push
+
+      - name: Fail if any card could not be generated
+        # Uniform indentation matters: in a folded block, a more-indented line
+        # would keep its newline instead of folding into one expression.
+        if: >-
+          ${{ !cancelled()
+          && ( steps.stats.outcome == 'failure'
+          || steps.langs.outcome == 'failure'
+          || steps.streak.outcome == 'failure'
+          || steps.trophies.outcome == 'failure'
+          || steps.activity.outcome == 'failure' ) }}
+        run: |
+          echo "::error::At least one card failed to generate. The previously committed SVG was kept, so the README still renders. See the failed step above for the cause."
+          exit 1

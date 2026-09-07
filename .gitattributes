@@ -1,0 +1,4 @@
+# The cards in profile/ are generated on a Linux runner, which writes LF.
+# Pinning LF keeps a checkout on any platform byte-identical to what the runner
+# produces, so "commit only when the card actually changed" stays accurate.
+* text=auto eol=lf
