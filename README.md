@@ -1,11 +1,11 @@
 # Hey, I'm Parth Patidar
 
-Pre-final year at NIT Trichy. I built [QuestXP](https://questxp.in) — a platform that converts YouTube
+Pre-final year at NIT Trichy. I built [QuestXP](https://questxp.in) : a platform that converts YouTube
 playlists into full AI-powered courses with RAG-based doubt solving, streaks
-and XP systems — not for a hackathon submission, just because I wanted it to exist.
+and XP systems not for a hackathon submission, just because I wanted it to exist.
 
 I genuinely get excited about how things work under the hood. Systems that don't break under
-pressure, backend architecture, LLM workflows — I go down these rabbit
+pressure, backend architecture, LLM workflows. I go down these rabbit
 holes at 2 am not because I have to but because I actually want to.
 
 Right now I'm deep into AI engineering and system design, obsessed with building
